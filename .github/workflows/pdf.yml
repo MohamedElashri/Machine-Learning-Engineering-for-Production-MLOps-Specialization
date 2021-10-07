@@ -14,7 +14,6 @@ jobs:
     - name: Download tex-live recommended stuff  
       run: |
            sudo apt-get install texlive-fonts-recommended texlive-fonts-recommended-doc texlive-plain-generic
-           sudo apt-file ulem.sty
     - name: Jupyter Notebooks to PDF
       uses: MohamedElashri/Jupyter-to-PDF@v1.2
     - name: Create Pull Request
