@@ -1,0 +1,23 @@
+name: Jupyter to PDF
+on:
+  push:
+    workflow_dispatch:
+    paths:
+      - '**.ipynb'
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+    - name: Jupyter Notebooks to PDF
+      uses: MohamedElashri/Jupyter-to-PDF@v1
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        commit-message: Pull request with the Convreted markdown files
+        committer: Mohamed Elashri <MohamedElashri@users.noreply.github.com>
+        title: Convert file from .ipynb to .pdf 
+        body: This is an auto-generated PR
+        branch: PDF
