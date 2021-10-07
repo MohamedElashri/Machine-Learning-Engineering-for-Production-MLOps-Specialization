@@ -1,7 +1,7 @@
 name: Jupyter to PDF
 on:
+  workflow_dispatch:
   push:
-    workflow_dispatch:
     paths:
       - '**.ipynb'
 jobs:
